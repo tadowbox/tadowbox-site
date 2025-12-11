@@ -1,1 +1,8 @@
-{}
+{
+  "endereco": "Rua Itajubá, 05 - CPA 1, Cuiabá - MT",
+  "texto": "Agende vivência, orçamento de turma ou projeto especial.",
+  "links": [
+    { "label": "WhatsApp", "url": "https://wa.me/5565981693839" },
+    { "label": "Instagram", "url": "https://instagram.com/tadowbox" }
+  ]
+}
