@@ -1,1 +1,15 @@
-[]
+{
+  "ceramica": [
+    {
+      "badge": "Vivência · Cerâmica com vinho",
+      "titulo": "Cerâmica com vinho",
+      "tags": ["Amigos", "Despedidas", "Presentes afetivos"],
+      "descricao": "3 horas para criar sua peça com orientação.",
+      "foto": ""
+    }
+  ],
+  "yoga": [],
+  "pintura": [],
+  "celebracoes": [],
+  "empresas": []
+}
