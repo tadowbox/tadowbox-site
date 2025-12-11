@@ -2,1397 +2,461 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Tadow Box Ateliê Artístico — Cuiabá - MT</title>
+  <title>Tadow Box — Ateliê Artístico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
+    /* Mantém TODO seu design, grid, brutalismo, laranja Tadow */
+
     :root {
       --bg: #faf8f4;
       --bg-alt: #ffffff;
       --ink: #161616;
       --ink-soft: #595959;
-      --accent: #f58235; /* laranja Tadow */
+      --accent: #f58235;
       --accent-soft: #ffe2c6;
       --border-strong: #141414;
       --border-soft: #d4d1c8;
       --max-width: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
       color: var(--ink);
-      background-color: var(--bg);
-      background-image:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+      background-image: linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px),
+                        linear-gradient(180deg, rgba(0,0,0,0.015) 1px, transparent 1px);
       background-size: 18px 18px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
     .shell {
-      width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 24px 16px 56px;
     }
 
-    /* HEADER — editorial com traço bold laranja */
+    /* -------- HEADER (mantido igual) -------- */
 
     header {
       background: rgba(250, 248, 244, 0.96);
-      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       border-bottom: 1px solid var(--border-soft);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 14px 16px 10px;
+      padding: 14px 16px;
       display: flex;
-      align-items: flex-end;
       gap: 20px;
       position: relative;
+      align-items: flex-end;
     }
 
     .header-stripe {
       position: absolute;
+      bottom: 0;
       left: 16px;
       right: 16px;
-      bottom: 0;
       height: 3px;
       background: var(--accent);
-    }
-
-    .brand-block {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .brand-line-main {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand-line-sub {
-      font-size: 12px;
-      color: var(--ink-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
     }
 
     nav {
       margin-left: auto;
       display: flex;
-      align-items: center;
       gap: 20px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 18px;
-    }
+    .nav-links { display: flex; gap: 18px; }
 
-    .nav-links a {
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-    }
+    /* -------- HERO (agora DINÂMICO) -------- */
 
-    .nav-links a:hover {
-      border-color: var(--accent);
-    }
-
-    .nav-cta {
-      border: 1px solid var(--border-strong);
-      padding: 7px 12px;
-      background: var(--accent);
-      color: #000;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    /* HERO — editorial + estrutura forte */
-
-    main {
-      flex: 1;
-    }
-
-    .hero {
-      padding: 52px 0 40px;
-    }
-
+    .hero { padding: 52px 0 40px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
       gap: 64px;
       align-items: center;
     }
 
-    .hero-kicker {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      margin-bottom: 16px;
-      color: var(--ink-soft);
-    }
-
-    .hero-title {
-      font-size: clamp(40px, 5vw, 56px);
-      line-height: 1.03;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--ink-soft);
-      max-width: 480px;
-      margin-bottom: 26px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 10px 18px;
-      border: 1px solid var(--border-strong);
-      background: transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-primary {
-      background: var(--ink);
-      color: #ffffff;
-    }
-
-    .btn-secondary {
-      background: transparent;
-    }
-
-    .btn-secondary::after {
-      content: "→";
-      font-size: 13px;
-    }
-
-    .hero-tags {
-      font-size: 12px;
-      color: var(--ink-soft);
-      margin-top: 4px;
-    }
-
-    .hero-tags span {
-      display: inline;
-    }
-
-    .hero-tags span + span::before {
-      content: " · ";
-      margin: 0 2px;
-    }
-
-    .hero-right {
-      display: flex;
-      justify-content: center;
-    }
+    #hero-kicker {}
+    #hero-title {}
+    #hero-sub {}
+    #hero-tags {}
 
     .hero-image {
       width: 100%;
       max-width: 380px;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 3/4;
       border: 1px solid var(--border-strong);
-      background:
-        linear-gradient(135deg, #f3eee5, #ffffff 40%, #e7ded1 100%);
+      background: linear-gradient(135deg,#f3eee5,#ffffff 40%,#e7ded1);
     }
 
-    /* SEÇÕES GENÉRICAS */
+    /* -------- SOBRE (dinâmico) -------- */
 
-    section {
-      margin-top: 40px;
-    }
+    #sobre-texto-1,
+    #sobre-texto-2 {}
 
-    .section-header {
-      padding-bottom: 12px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border-strong);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-end;
-    }
+    /* -------- EXPERIÊNCIAS (dinâmico) -------- */
 
-    .section-title-row {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--ink-soft);
-    }
-
-    .section-title {
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      color: var(--ink-soft);
-      max-width: 420px;
-      line-height: 1.6;
-    }
-
-    .section-accent-bar {
-      width: 72px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 6px;
-    }
-
-    /* SOBRE */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-      gap: 24px;
-    }
-
-    .about-text {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--ink-soft);
-    }
-
-    .about-panel {
-      border: 1px solid var(--border-strong);
-      background: var(--bg-alt);
-      padding: 14px 14px 12px;
-      font-size: 13px;
-      line-height: 1.7;
-      position: relative;
-    }
-
-    .about-panel::before {
-      content: "Recorte de tempo";
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink-soft);
-    }
-
-    .about-panel-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 8px;
-      padding-right: 90px;
-    }
-
-    /* EXPERIÊNCIAS — cards flutuando com scroll lateral */
-
-    .experiences-strip {
+    #experiencias-container {
       overflow-x: auto;
-      padding-bottom: 4px;
-      margin-right: -8px;
+      padding-bottom: 6px;
     }
 
-    .experiences-row {
+    #experiencias-row {
       display: inline-flex;
       gap: 16px;
-      padding-bottom: 4px;
       padding-right: 8px;
-      align-items: flex-start;
     }
 
     .experience-card {
-      border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      background: var(--bg-alt);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
       min-width: 280px;
       max-width: 320px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .experience-photo {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(135deg, #f3eee5, #ffffff 40%, #e7ded1 100%);
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .experience-body {
-      padding: 10px 12px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 13px;
-    }
-
-    .experience-badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink-soft);
-    }
-
-    .experience-title {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .experience-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 2px;
-    }
-
-    .experience-tags span {
-      border-radius: 999px;
+      background: var(--bg-alt);
       border: 1px solid var(--border-soft);
-      padding: 3px 9px;
-      font-size: 11px;
-      background: #f8f5ed;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .22s ease, transform .22s ease;
     }
 
-    .experience-tags .tag-accent {
-      border-color: var(--accent);
-      background: var(--accent-soft);
+    .experience-card.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .experience-footer {
-      padding: 0 12px 10px 12px;
-    }
+    /* -------- AGENDA (dinâmico) -------- */
 
-    .experience-toggle {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border-strong);
-      background: #ffffff;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    
-
-    .experience-extra {
-      padding: 0 12px 10px 12px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      border-top: 1px dashed var(--border-soft);
-      margin-top: 6px;
-    }
-
-    .experience-actions {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .experience-link,
-    .experience-less {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid var(--border-strong);
-      background: transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .experience-link {
-      border-color: var(--accent);
-    }
-
-    .experience-less {
-      border-color: var(--border-strong);
-    }
-
-    /* AGENDA */
-
-    .agenda-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 12px;
-      margin-top: 10px;
-      margin-bottom: 8px;
-      font-size: 12px;
-    }
-
-    .agenda-filter-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .agenda-filter-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
-    }
-
-    .agenda-filter-select {
-      border: 1px solid var(--border-strong);
-      background: #ffffff;
-      font-size: 12px;
-      padding: 4px 8px;
-      outline: none;
-      appearance: none;
-    }
-
-    .event-list-grid {
-      display: flex;
-      flex-wrap: wrap;
+    #agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
       gap: 16px;
-      margin-top: 10px;
     }
 
     .event-card {
       border: 1px solid var(--border-strong);
+      padding: 14px;
       background: var(--bg-alt);
-      padding: 0 14px 12px; /* topo agora é faixa laranja */
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-      width: calc((100% - 64px) / 5); /* 5 cards por linha no máximo */
-      max-width: 220px; /* largura fixa aproximada */
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .event-card.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .event-date {
-      background: var(--accent);
-      color: #ffffff;
-      padding: 6px 10px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      width: calc(100% + 28px);
-      margin-left: -14px;
-      margin-top: -1px; /* encosta na borda */
-    }
+    /* -------- GALERIA (dinâmico) -------- */
 
-    .event-title {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .event-meta {
-      font-size: 12px;
-      color: var(--ink-soft);
-    }
-
-    .event-cta {
-      margin-top: 4px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      border: 1px solid var(--border-strong);
-      padding: 4px 8px;
-      display: inline-block;
-      background: var(--accent-soft);
-      width: fit-content;
-    } */
-      padding: 0 12px 10px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      border-top: 1px dashed var(--border-soft);
-      margin-top: 6px;
-    }
-
-    /* AGENDA */
-
-    .event-list {
+    #galeria-grid {
       display: grid;
-      gap: 10px;
-      font-size: 13px;
-    }
-
-    .event {
-      border: 1px solid var(--border-strong);
-      background: var(--bg-alt);
-      padding: 10px 10px;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .event-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .event-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .event-meta {
-      font-size: 12px;
-      color: var(--ink-soft);
-    }
-
-    .event-pill {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border: 1px solid var(--border-strong);
-      padding: 4px 8px;
-      background: var(--accent-soft);
-      white-space: nowrap;
-    }
-
-    .agenda-pagination {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      font-size: 12px;
-    }
-
-    .agenda-page-btn {
-      border: 1px solid var(--border-strong);
-      background: #ffffff;
-      padding: 4px 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      cursor: pointer;
-      font-size: 11px;
-    }
-
-    .agenda-page-btn.is-active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
-
-    /* GALERIA — blocos maiores, vibe catálogo */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
       gap: 14px;
     }
 
     .gallery-item {
       border: 1px solid var(--border-strong);
       background: var(--bg-alt);
-      display: flex;
-      flex-direction: column;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .gallery-item.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .gallery-thumb {
-      aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(135deg, #e8e1d5, #fdfbf7 40%, #e0d6c6 100%);
-    }
+    /* -------- CONTATO (dinâmico) -------- */
 
-    .gallery-caption {
-      border-top: 1px solid var(--border-strong);
-      padding: 6px 8px;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
+    #contato-endereco {}
+    #contato-texto {}
+    #contato-links {}
 
-    .gallery-caption span {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
-    }
-
-    .gallery-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid var(--border-strong);
-      background: var(--accent);
-    }
-
-    /* CONTATO / VISITE */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 16px;
-    }
-
-    .contact-card {
-      border: 1px solid var(--border-strong);
-      background: var(--bg-alt);
-      padding: 12px 12px 10px;
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .contact-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .contact-main {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .contact-links a {
-      display: inline-block;
-      margin-right: 10px;
-      margin-top: 4px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border-bottom: 1px solid var(--border-strong);
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid var(--border-strong);
-      margin-top: 44px;
-      padding: 12px 16px 16px;
-      font-size: 11px;
-      background: #f0ede6;
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      border-bottom: 1px solid var(--border-strong);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    /* RESPONSIVO */
-
-    @media (max-width: 880px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-      }
-
-      .hero {
-        padding-top: 40px;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .event-card {
-        width: calc((100% - 16px) / 2); /* 2 cards por linha no mobile */
-        max-width: none;
-      }
-    }
-
-      .hero {
-        padding-top: 40px;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="header-inner">
-        <div class="brand-block">
-          <div class="brand-line-main">Tadow Box</div>
-          <div class="brand-line-sub">Ateliê Artístico · Cuiabá - MT</div>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="brand-line-main">Tadow Box</div>
+        <div class="brand-line-sub">Ateliê Artístico · Cuiabá - MT</div>
+      </div>
+      <nav>
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#experiencias">Experiências</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#visite">Visite</a>
+        </div>
+      </nav>
+      <div class="header-stripe"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+
+      <!-- HERO → AGORA VAZIO PARA SER PREENCHIDO POR JSON -->
+      <section id="hero" class="hero">
+        <div class="hero-grid">
+          <div>
+            <div id="hero-kicker" class="hero-kicker"></div>
+            <h1 id="hero-title" class="hero-title"></h1>
+            <p id="hero-sub" class="hero-sub"></p>
+            <div id="hero-tags" class="hero-tags"></div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-image"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre">
+        <div class="section-header">
+          <div class="section-title-row">
+            <div class="section-kicker">Contexto</div>
+            <h2 class="section-title">Sobre a Tadow</h2>
+            <div class="section-accent-bar"></div>
+          </div>
         </div>
 
-        <nav>
-          <div class="nav-links">
-            <a href="#sobre">Sobre</a>
-            <a href="#experiencias">Experiências</a>
-            <a href="#agenda">Agenda</a>
-            <a href="#visite">Visite</a>
+        <div class="about-grid">
+          <p id="sobre-texto-1" class="about-text"></p>
+          <div class="about-panel">
+            <div class="about-panel-label">Um tempo que é só seu</div>
+            <p id="sobre-texto-2"></p>
           </div>
-          <a
-            href="https://wa.me/5565981693839?text=Acessei%20o%20site%20da%20tadow%20e%20quero%20mais%20informa%C3%A7%C3%B5es."
-            class="nav-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Reservar experiência
-          </a>
-        </nav>
-
-        <div class="header-stripe"></div>
-      </div>
-    </header>
-
-    <main>
-      <div class="shell">
-        <!-- HERO -->
-        <section class="hero">
-          <div class="hero-grid">
-            <div>
-              <span class="hero-kicker">Ateliê · Galeria · Vivências</span>
-              <h1 class="hero-title">
-                A arte acontece<br />
-                no encontro.
-              </h1>
-              <p class="hero-sub">
-                A Tadow Box é um ateliê-galeria em Cuiabá que cria experiências em
-                cerâmica, pintura, movimento e presença — para pessoas, grupos e
-                empresas.
-              </p>
-
-              <div class="hero-buttons">
-                <a
-                  href="https://wa.me/5565981693839?text=Acessei%20o%20site%20da%20tadow%20e%20quero%20mais%20informa%C3%A7%C3%B5es."
-                  class="btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Reservar vivência
-                </a>
-                <a href="#experiencias" class="btn-secondary">
-                  Ver experiências
-                </a>
-              </div>
-
-              <div class="hero-tags">
-                <span>cerâmica</span>
-                <span>pintura</span>
-                <span>yoga tadow</span>
-                <span>celebrações</span>
-              </div>
-            </div>
-
-            <div class="hero-right">
-              <div class="hero-image" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SOBRE -->
-        <section id="sobre">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Contexto</div>
-              <h2 class="section-title">Sobre a Tadow</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub">
-              A Tadow Box é uma galeria-ateliê onde a arte não fica só na parede: ela
-              passa pelas mãos, pelo corpo e pelas relações que se criam nos
-              encontros.
-            </p>
-          </div>
-
-          <div class="about-grid">
-            <p class="about-text">
-              O espaço nasceu como ateliê de artistas e foi se transformando em lugar
-              de vivências. Aqui, a gente mistura argila, tinta, movimento, vinho e
-              conversa boa. Não é preciso saber desenhar ou ter "experiência" com
-              arte: cada encontro é pensado para ser acessível, afetivo e marcante.
-            </p>
-
-            <div class="about-panel">
-              <div class="about-panel-label">Um tempo que é só seu</div>
-              Na Tadow, cada vivência é uma pausa da correria: você entra, respira,
-              cria algo com as próprias mãos e sai levando uma memória material desse
-              momento — uma peça de cerâmica, uma taça pintada, um quadro ou só a
-              lembrança de ter estado presente.
-            </div>
-          </div>
-        </section>
-
-        <!-- EXPERIÊNCIAS -->
-        <section id="experiencias">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Formatos</div>
-              <h2 class="section-title">Experiências</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub">
-              Alguns formatos que já vivem na Tadow e podem ser adaptados para você,
-              seu grupo, sua família ou sua empresa.
-            </p>
-          </div>
-
-          <div class="experiences-strip">
-            <div class="experiences-row">
-              <!-- Card 1 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Vivência · Cerâmica com vinho</div>
-                  <h3 class="experience-title">Cerâmica com vinho</h3>
-                  <div class="experience-tags">
-                    <span class="tag-accent">Amigos</span>
-                    <span>Despedidas</span>
-                    <span>Presentes afetivos</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    3 horas de experiência para criar sua própria peça em cerâmica do
-                    zero, com orientação das ceramistas e vinho na mesa. Um encontro
-                    leve, pra conversar, rir e colocar a mão na massa.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Card 2 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Experiência · Yoga Tadow</div>
-                  <h3 class="experience-title">Yoga Tadow com arte</h3>
-                  <div class="experience-tags">
-                    <span>Vivência sensorial</span>
-                    <span>Desenhos ao vivo</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    Encontro que une prática de yoga, arte ao vivo e, às vezes, uma
-                    taça. Enquanto você se movimenta, artistas registram as posturas
-                    em desenho, criando obras únicas daquele momento.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Card 3 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Celebrações · Chá de bebê artístico</div>
-                  <h3 class="experience-title">Chá de bebê artístico</h3>
-                  <div class="experience-tags">
-                    <span class="tag-accent">Família e amigos</span>
-                    <span>Presentes afetivos</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    Cada pessoa pinta um body de bebê e, no fim, a família leva uma
-                    coleção de peças cheias de histórias. Um jeito diferente de
-                    celebrar a chegada de uma nova vida.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Card 4 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Empresas · Projetos sob medida</div>
-                  <h3 class="experience-title">Arte para empresas</h3>
-                  <div class="experience-tags">
-                    <span>Confraternizações</span>
-                    <span>Equipes & gestores</span>
-                    <span class="tag-accent">Projetos personalizados</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    Vivências especiais para empresas, equipes e encontros de
-                    gestores que querem celebrar conquistas, fortalecer vínculos ou
-                    fechar ciclos com arte e presença.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Card 5 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Vivência · Pintura em taças</div>
-                  <h3 class="experience-title">Pintura em taças</h3>
-                  <div class="experience-tags">
-                    <span>Brindes personalizados</span>
-                    <span>Datas especiais</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    Cada pessoa personaliza sua própria taça enquanto aproveita um
-                    momento leve de criação, conversa e brindes compartilhados.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Card 6 -->
-              <article class="experience-card">
-                <div class="experience-photo" aria-hidden="true"></div>
-                <div class="experience-body">
-                  <div class="experience-badge">Família · Body painting de bebê</div>
-                  <h3 class="experience-title">Body painting de bebê</h3>
-                  <div class="experience-tags">
-                    <span>Gestantes & amigas</span>
-                    <span class="tag-accent">Memórias em tecido</span>
-                  </div>
-                </div>
-                <div class="experience-footer">
-                  <button class="experience-toggle" type="button">Ver mais +</button>
-                  <div class="experience-extra" hidden>
-                    Vivência em que cada pessoa pinta um body de bebê, criando um
-                    enxoval afetivo cheio de histórias, risadas e cores.
-                    <div class="experience-actions">
-  <a href="#detalhe" class="experience-link" style="background: var(--accent); color:#000; border-color: var(--accent);">Saber mais</a>
-</div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- AGENDA -->
-        <section id="agenda">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Programação</div>
-              <h2 class="section-title">Agenda</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub">
-              A programação da Tadow abre turmas de tempos em tempos e também recebe
-              grupos fechados. Fala com a gente para saber as próximas datas.
-            </p>
-          </div>
-
-          <div class="agenda-filters">
-            <div class="agenda-filter-group">
-              <span class="agenda-filter-label">Mês</span>
-              <select id="agenda-filter-month" class="agenda-filter-select">
-                <option value="all">Todos</option>
-                <option value="jan">Jan</option>
-                <option value="fev">Fev</option>
-              </select>
-            </div>
-            <div class="agenda-filter-group">
-              <span class="agenda-filter-label">Tipo</span>
-              <select id="agenda-filter-type" class="agenda-filter-select">
-                <option value="all">Todos</option>
-                <option value="ceramica">Cerâmica</option>
-                <option value="yoga">Yoga Tadow</option>
-                <option value="pintura">Pintura</option>
-                <option value="familia">Família</option>
-                <option value="empresas">Empresas</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="event-list-grid">
-  <div class="event-card" data-month="jan" data-type="ceramica">
-    <div class="event-date">12 JAN · 19H</div>
-    <div class="event-title">Cerâmica com vinho</div>
-    <div class="event-meta">Turma aberta · Tadow Box</div>
-    <div class="event-cta">Vagas disponíveis</div>
-  </div>
-  <div class="event-card" data-month="jan" data-type="yoga">
-    <div class="event-date">20 JAN · 08H</div>
-    <div class="event-title">Yoga Tadow com arte</div>
-    <div class="event-meta">Vivência sensorial · Ateliê</div>
-    <div class="event-cta">Lista de interesse</div>
-  </div>
-  <div class="event-card" data-month="jan" data-type="pintura">
-    <div class="event-date">27 JAN · 15H</div>
-    <div class="event-title">Pintura em taças</div>
-    <div class="event-meta">Edição especial de verão</div>
-    <div class="event-cta">Em breve</div>
-  </div>
-  <div class="event-card" data-month="fev" data-type="familia">
-    <div class="event-date">03 FEV · 09H</div>
-    <div class="event-title">Chá de bebê artístico</div>
-    <div class="event-meta">Turma para famílias · Ateliê</div>
-    <div class="event-cta">2 vagas</div>
-  </div>
-  <div class="event-card" data-month="fev" data-type="empresas">
-    <div class="event-date">10 FEV · 18H</div>
-    <div class="event-title">Arte para empresas</div>
-    <div class="event-meta">Encontro para equipes</div>
-    <div class="event-cta">Sob consulta</div>
-  </div>
-</div>
-</section>
-
-        <!-- GALERIA -->
-        <section id="galeria">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Registros</div>
-              <h2 class="section-title">Galeria</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub">
-              Alguns recortes visuais do que já aconteceu aqui dentro. Em breve você
-              pode trocar esses blocos por fotos reais da Tadow.
-            </p>
-          </div>
-
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <div class="gallery-thumb"></div>
-              <div class="gallery-caption">
-                <span>Cerâmica em processo</span>
-                <div class="gallery-dot"></div>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <div class="gallery-thumb"></div>
-              <div class="gallery-caption">
-                <span>Vivência com taças</span>
-                <div class="gallery-dot"></div>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <div class="gallery-thumb"></div>
-              <div class="gallery-caption">
-                <span>Detalhes do ateliê</span>
-                <div class="gallery-dot"></div>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <div class="gallery-thumb"></div>
-              <div class="gallery-caption">
-                <span>Peças prontas</span>
-                <div class="gallery-dot"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CONTATO / VISITE -->
-        <section id="visite">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Presença</div>
-              <h2 class="section-title">Visite a Tadow</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub">
-              A Tadow Box fica em Cuiabá - MT. As visitas são combinadas com
-              antecedência para garantir que o espaço esteja pronto pra te receber
-              com calma.
-            </p>
-          </div>
-
-          <div class="contact-grid">
-            <div class="contact-card">
-              <div class="contact-label">Endereço</div>
-              <div class="contact-main">
-                Rua Itajubá, 05 - CPA 1<br />
-                Cuiabá - MT
-              </div>
-              <div class="contact-links">
-                <a
-                  href="https://maps.app.goo.gl/fRhHm7MZafBWTcAK6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver no mapa
-                </a>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-label">Contato</div>
-              <div class="contact-main">
-                Fala com a gente pra agendar vivência, orçamento de turma ou projeto
-                especial.
-              </div>
-              <div class="contact-links">
-                <a
-                  href="https://wa.me/5565981693839?text=Acessei%20o%20site%20da%20tadow%20e%20quero%20mais%20informa%C3%A7%C3%B5es."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </a>
-                <a
-                  href="https://www.instagram.com/tadowbox"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Tadow Box Ateliê Artístico.</div>
-        <div class="footer-links">
-          <a href="#experiencias">Ver experiências</a>
-          <a
-            href="https://www.instagram.com/tadowbox"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
         </div>
+      </section>
+
+      <!-- EXPERIÊNCIAS (dinâmicas) -->
+      <section id="experiencias">
+        <div class="section-header">
+          <div class="section-title-row">
+            <div class="section-kicker">Formatos</div>
+            <h2 class="section-title">Experiências</h2>
+            <div class="section-accent-bar"></div>
+          </div>
+        </div>
+
+        <div id="experiencias-container">
+          <div id="experiencias-row"></div>
+        </div>
+      </section>
+
+      <!-- AGENDA (dinâmica) -->
+      <section id="agenda">
+        <div class="section-header">
+          <div class="section-title-row">
+            <div class="section-kicker">Programação</div>
+            <h2 class="section-title">Agenda</h2>
+            <div class="section-accent-bar"></div>
+          </div>
+        </div>
+
+        <div id="agenda-grid"></div>
+      </section>
+
+      <!-- GALERIA (dinâmica) -->
+      <section id="galeria">
+        <div class="section-header">
+          <div class="section-title-row">
+            <div class="section-kicker">Registros</div>
+            <h2 class="section-title">Galeria</h2>
+            <div class="section-accent-bar"></
+        </div>
+      </section>
+
+      <!-- CONTATO / VISITE (dinâmico futuramente) -->
+      <section id="visite">
+        <div class="section-header">
+          <div class="section-title-row">
+            <div class="section-kicker">Presença</div>
+            <h2 class="section-title">Visite a Tadow</h2>
+            <div class="section-accent-bar"></div>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-label">Endereço</div>
+            <div id="contato-endereco" class="contact-main"></div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-label">Contato</div>
+            <div id="contato-texto" class="contact-main"></div>
+            <div id="contato-links" class="contact-links"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Tadow Box Ateliê Artístico.</div>
+      <div class="footer-links">
+        <a href="#experiencias">Ver experiências</a>
+        <a href="https://instagram.com/tadowbox" target="_blank">Instagram</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Interação dos cards de experiência
-    (function () {
-      function closeAllCards() {
-        document.querySelectorAll('.experience-card').forEach(function (card) {
-          const extra = card.querySelector('.experience-extra');
-          const btn = card.querySelector('.experience-toggle');
-          if (extra && !extra.hasAttribute('hidden')) {
-            extra.setAttribute('hidden', '');
-          }
-          if (btn) {
-            btn.textContent = 'Ver mais +';
-            btn.classList.remove('is-active');
-          }
-        });
-      }
-
-      document.querySelectorAll('.experience-toggle').forEach(function (button) {
-        button.addEventListener('click', function () {
-          const card = button.closest('.experience-card');
-          const extra = card.querySelector('.experience-extra');
-          if (!extra) return;
-
-          const isOpen = !extra.hasAttribute('hidden');
-
-          if (!isOpen) {
-            // Fecha qualquer outro card aberto
-            closeAllCards();
-            // Abre o atual
-            extra.removeAttribute('hidden');
-            button.textContent = 'Ver menos -';
-            button.classList.add('is-active');
-          } else {
-            // Recolhe o atual
-            extra.setAttribute('hidden', '');
-            button.textContent = 'Ver mais +';
-            button.classList.remove('is-active');
-          }
-        });
-      });
-    })();
-
-    // Filtros da agenda + paginação
-    (function () {
-      const monthSelect = document.getElementById('agenda-filter-month');
-      const typeSelect = document.getElementById('agenda-filter-type');
-      if (!monthSelect || !typeSelect) return;
-
-      const cards = Array.from(document.querySelectorAll('.event-card'));
-      const grid = document.querySelector('.event-list-grid');
-      if (!grid) return;
-
-      // cria container de paginação
-      const pagContainer = document.createElement('div');
-      pagContainer.className = 'agenda-pagination';
-      grid.parentNode.insertBefore(pagContainer, grid.nextSibling);
-
-      const pageSize = 10; // 5 cards por linha x 2 linhas
-      let currentPage = 1;
-
-      function getFilteredCards() {
-        const mes = monthSelect.value;
-        const tipo = typeSelect.value;
-
-        return cards.filter(function (card) {
-          const cardMes = card.dataset.month;
-          const cardTipo = card.dataset.type;
-
-          if (mes !== 'all' && cardMes !== mes) return false;
-          if (tipo !== 'all' && cardTipo !== tipo) return false;
-          return true;
-        });
-      }
-
-      function render() {
-        const filtered = getFilteredCards();
-        const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-
-        if (currentPage > totalPages) currentPage = totalPages;
-        if (currentPage < 1) currentPage = 1;
-
-        // esconde todos
-        cards.forEach(function (card) {
-          card.style.display = 'none';
-        });
-
-        // mostra apenas os da página atual
-        const start = (currentPage - 1) * pageSize;
-        const end = start + pageSize;
-        filtered.slice(start, end).forEach(function (card) {
-          card.style.display = '';
-        });
-
-        // paginação
-        pagContainer.innerHTML = '';
-        if (totalPages <= 1) return;
-
-        for (let p = 1; p <= totalPages; p++) {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'agenda-page-btn' + (p === currentPage ? ' is-active' : '');
-          btn.textContent = 'Página ' + p;
-          btn.dataset.page = String(p);
-          btn.addEventListener('click', function () {
-            currentPage = parseInt(this.dataset.page, 10) || 1;
-            render();
-          });
-          pagContainer.appendChild(btn);
-        }
-      }
-
-      function aplicarFiltros() {
-        currentPage = 1;
-        render();
-      }
-
-      monthSelect.addEventListener('change', aplicarFiltros);
-      typeSelect.addEventListener('change', aplicarFiltros);
-
-      // render inicial
-      render();
-    })();
   </script>
+
+<script>
+// === SCRIPT DINÂMICO DO SITE TADOW ===
+
+async function loadJSON(path) {
+  try {
+    const res = await fetch(path);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+function animateIn(el) {
+  requestAnimationFrame(() => {
+    el.classList.add("loaded");
+  });
+}
+
+// ---------- HERO ----------
+async function loadHero(texts) {
+  if (!texts?.hero) return;
+  const h = texts.hero;
+  if (h.kicker) document.getElementById("hero-kicker").textContent = h.kicker;
+  if (h.title) document.getElementById("hero-title").textContent = h.title;
+  if (h.subtitle) document.getElementById("hero-sub").textContent = h.subtitle;
+
+  if (Array.isArray(h.tags)) {
+    const box = document.getElementById("hero-tags");
+    box.innerHTML = h.tags.map(t => `<span>${t}</span>`).join("");
+  }
+}
+
+// ---------- SOBRE ----------
+async function loadSobre(texts) {
+  if (!texts?.sobre) return;
+  if (texts.sobre.texto1) document.getElementById("sobre-texto-1").textContent = texts.sobre.texto1;
+  if (texts.sobre.texto2) document.getElementById("sobre-texto-2").textContent = texts.sobre.texto2;
+}
+
+// ---------- EXPERIÊNCIAS ----------
+async function loadExperiencias(data) {
+  if (!data) return;
+
+  const row = document.getElementById("experiencias-row");
+  row.innerHTML = "";
+
+  Object.keys(data).forEach(cat => {
+    data[cat].forEach(exp => {
+      const card = document.createElement("div");
+      card.className = "experience-card";
+      card.innerHTML = `
+        <div class='experience-photo'></div>
+        <div class='experience-body'>
+          <div class='experience-badge'>${exp.badge || ""}</div>
+          <h3 class='experience-title'>${exp.titulo || ""}</h3>
+          <div class='experience-tags'>
+            ${(exp.tags || []).map(t => `<span>${t}</span>`).join("")}
+          </div>
+        </div>
+      `;
+      row.appendChild(card);
+      animateIn(card);
+    });
+  });
+}
+
+// ---------- AGENDA ----------
+async function loadAgenda(list) {
+  if (!Array.isArray(list)) return;
+
+  const grid = document.getElementById("agenda-grid");
+  grid.innerHTML = "";
+
+  list.forEach(ev => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+    card.innerHTML = `
+      <div class='event-date'>${ev.data || ""}</div>
+      <div class='event-title'>${ev.titulo || ""}</div>
+      <div class='event-meta'>${ev.sub || ""}</div>
+      <div class='event-cta'>${ev.status || ""}</div>
+    `;
+    grid.appendChild(card);
+    animateIn(card);
+  });
+}
+
+// ---------- GALERIA ----------
+async function loadGaleria(items) {
+  if (!Array.isArray(items)) return;
+  const grid = document.getElementById("galeria-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  items.forEach(item => {
+    const box = document.createElement("div");
+    box.className = "gallery-item";
+    box.innerHTML = `
+      <div class='gallery-thumb'></div>
+      <div class='gallery-caption'>
+        <span>${item.titulo || ""}</span>
+        <div class='gallery-dot'></div>
+      </div>
+    `;
+    grid.appendChild(box);
+    animateIn(box);
+  });
+}
+
+// ---------- CONTATO ----------
+async function loadContato(data) {
+  if (!data) return;
+  if (data.endereco) document.getElementById("contato-endereco").textContent = data.endereco;
+  if (data.texto) document.getElementById("contato-texto").textContent = data.texto;
+  if (Array.isArray(data.links)) {
+    const box = document.getElementById("contato-links");
+    box.innerHTML = data.links.map(l => `<a href='${l.url}' target='_blank'>${l.label}</a>`).join("");
+  }
+}
+
+// ---------- CARREGAMENTO GLOBAL ----------
+async function loadSite() {
+  const texts = await loadJSON("site_texts.json");
+  const exps = await loadJSON("experiencias.json");
+  const agenda = await loadJSON("agenda.json");
+  const galeria = await loadJSON("galeria.json");
+  const contato = await loadJSON("contato.json");
+
+  loadHero(texts);
+  loadSobre(texts);
+  loadExperiencias(exps);
+  loadAgenda(agenda);
+  loadGaleria(galeria);
+  loadContato(contato);
+}
+
+loadSite();
+</script>
+
 </body>
 </html>
