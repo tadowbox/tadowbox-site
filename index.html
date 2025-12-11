@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tadow Box Ateliê Artístico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Tadow Box é um ateliê artístico em Cuiabá que cria experiências com arte: cerâmica, vivências com vinho, yoga, pintura e projetos personalizados."
+  />
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-elevated: #0f1014;
+      --accent: #ff5a00;
+      --accent-soft: rgba(255, 90, 0, 0.12);
+      --text: #f5f5f5;
+      --muted: #a3a3a3;
+      --border: rgba(255, 255, 255, 0.06);
+      --radius-lg: 20px;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        sans-serif;
+      background: radial-gradient(circle at top, #191b24 0, #050608 55%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 6, 8, 0.94),
+        rgba(5, 6, 8, 0.78),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 16px 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 0, #ffe1d2, #ff5a00);
+      box-shadow: 0 0 0 1px rgba(5, 6, 8, 0.9),
+        0 12px 30px rgba(0, 0, 0, 0.65);
+      flex-shrink: 0;
+    }
+
+    .logo-mark span {
+      font-weight: 800;
+      font-size: 18px;
+      color: #1b0f06;
+      letter-spacing: -0.06em;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: radial-gradient(circle at top left, #ff7a2f 0, #ff5a00 26%, #a83200 95%);
+      color: #140a04;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-cta span {
+      font-size: 16px;
+    }
+
+    /* HERO */
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      padding-top: 28px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      background: rgba(8, 9, 12, 0.85);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255, 90, 0, 0.22);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-full);
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.18s ease-out;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #ffb491 0, #ff5a00 40%, #9a3400 100%);
+      color: #1b0c05;
+      box-shadow: var(--shadow-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.18);
+      color: var(--muted);
+      background: rgba(10, 11, 15, 0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(15, 16, 22, 0.96);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-tags span {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 4px 10px;
+      background: rgba(10, 11, 15, 0.96);
+    }
+
+    .hero-card {
+      border-radius: 26px;
+      background: radial-gradient(circle at top left, #ff5a001f 0, #0b0c10 55%);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(7, 8, 11, 0.96);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #20e07a;
+      box-shadow: 0 0 0 5px rgba(32, 224, 122, 0.22);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 11px;
+    }
+
+    .metric {
+      padding: 8px 10px;
+      border-radius: 16px;
+      background: rgba(5, 6, 9, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .hero-card-footer strong {
+      color: #f7f7f7;
+      font-weight: 500;
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 360px;
+      line-height: 1.5;
+    }
+
+    .cards-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: rgba(8, 9, 13, 0.96);
+      border: 1px solid var(--border);
+      padding: 14px 14px 13px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .card-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .card-tags span {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: rgba(19, 20, 27, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: #c7c7c7;
+    }
+
+    .tag-accent {
+      background: var(--accent-soft);
+      border-color: rgba(255, 90, 0, 0.5) !important;
+      color: #ffd4ba !important;
+    }
+
+    /* SOBRE */
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about-highlight {
+      border-radius: 18px;
+      padding: 14px 14px 13px;
+      border: 1px dashed rgba(255, 255, 255, 0.14);
+      background: rgba(11, 12, 16, 0.96);
+      font-size: 13px;
+    }
+
+    /* AGENDA */
+
+    .event-list {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .event {
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(9, 10, 14, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .event-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .event-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .event-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .event-pill {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    /* GALERIA */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #15161c;
+      aspect-ratio: 4 / 3;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .gallery-item span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 8px 10px;
+      font-size: 11px;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        transparent
+      );
+    }
+
+    /* CONTATO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      background: rgba(8, 9, 13, 0.96);
+      border: 1px solid var(--border);
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-main {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      margin-right: 10px;
+      margin-top: 4px;
+      color: #e7e7e7;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 40px;
+      padding-top: 16px;
+      padding-bottom: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* RESPONSIVO */
+
+    @media (min-width: 720px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid,
+      .about-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="header-inner">
+        <div class="logo-mark">
+          <span>T</span>
+        </div>
+        <div class="brand">
+          <div class="brand-title">Tadow Box</div>
+          <div class="brand-sub">Ateliê Artístico • Cuiabá - MT</div>
+        </div>
+
+        <nav>
+          <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#visite">Visite</a>
+          </div>
+          <a
+            href="https://wa.me/5599999999999"
+            class="nav-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>●</span> Reservar experiência
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="shell">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="pill-row">
+            <div class="pill">
+              <div class="pill-dot"></div>
+              Arte viva, taça cheia e muita troca
+            </div>
+            <div class="pill">Cuiabá - MT</div>
+          </div>
+
+          <div class="hero-grid">
+            <div>
+              <h1 class="hero-title">
+                Um ateliê para viver <span>arte, presença</span> e boas histórias.
+              </h1>
+              <p class="hero-sub">
+                A Tadow Box é um espaço de experiências com arte: cerâmica, pintura,
+                yoga, taças, projetos especiais e encontros pra quem quer sentir
+                a vida com mais cor.
+              </p>
+
+              <div class="hero-ctas">
+                <a
+                  href="https://wa.me/5599999999999"
+                  class="btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>☻</span>
+                  Quero reservar uma vivência
+                </a>
+                <a
+                  href="https://www.instagram.com/tadowbox"
+                  class="btn-ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver o que tá rolando no Insta ↗
+                </a>
+              </div>
+
+              <div class="hero-tags">
+                <span>Cerâmica com vinho</span>
+                <span>Yoga Tadow</span>
+                <span>Chá de bebê artístico</span>
+                <span>Projetos corporativos</span>
+              </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Resumo da Tadow Box">
+              <div class="hero-card-header">
+                <div class="chip">
+                  <span class="chip-dot"></span>
+                  Hoje a Tadow está aberta
+                </div>
+                <div style="font-size: 11px; color: var(--muted);">
+                  Arte, vinho & presença
+                </div>
+              </div>
+
+              <div class="hero-metrics">
+                <div class="metric">
+                  <div class="metric-label">Vivências realizadas</div>
+                  <div class="metric-value">+100 grupos</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Pessoas impactadas</div>
+                  <div class="metric-value">+1.000</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Formatos de arte</div>
+                  <div class="metric-value">Cerâmica, pintura & mais</div>
+                </div>
+              </div>
+
+              <div class="hero-card-footer">
+                <div>
+                  <div>Próxima vivência aberta:</div>
+                  <strong>Cerâmica com vinho – em breve</strong>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 11px;">Garanta seu lugar</div>
+                  <div style="font-size: 11px; color: var(--accent);">
+                    Fale com a Tadow ↗
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Sobre a Tadow</div>
+            </div>
+            <p class="section-sub">
+              A Tadow Box nasceu como um ateliê de artistas e virou um ponto de
+              encontro para quem quer viver a arte no corpo, na taça, na mesa
+              e na memória.
+            </p>
+          </div>
+
+          <div class="about-layout">
+            <p>
+              Aqui a gente mistura argila, tinta, movimento e conversa boa.  
+              As experiências são pensadas para que qualquer pessoa — mesmo quem
+              “não sabe desenhar” — consiga criar algo que faça sentido pra si.
+              A estética importa, mas o que mais guia é o sentimento.
+            </p>
+
+            <div class="about-highlight">
+              Na Tadow, cada vivência é um recorte de tempo: você pausa a correria,
+              se conecta com o agora e leva um pedaço desse momento pra casa — em
+              forma de peça de cerâmica, quadro, taça pintada ou lembrança.
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPERIÊNCIAS -->
+        <section id="experiencias">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Experiências</div>
+            </div>
+            <p class="section-sub">
+              Formatos que já vivem na Tadow e podem ser adaptados pra você, seu
+              grupo, sua empresa ou seu rolê íntimo.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card">
+              <div class="card-badge">Vivência • Cerâmica com vinho</div>
+              <h3 class="card-title">Mãos na argila, taça na mão</h3>
+              <p class="card-body">
+                3 horas de experiência para criar sua própria peça em cerâmica do zero,
+                com acompanhamento das ceramistas, vinho à vontade e clima leve.
+              </p>
+              <div class="card-tags">
+                <span class="tag-accent">Grupos de amigos</span>
+                <span>Despedidas, aniversários</span>
+                <span>Presentes afetivos</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-badge">Experiência • Yoga Tadow</div>
+              <h3 class="card-title">Corpo em movimento, arte em tempo real</h3>
+              <p class="card-body">
+                Encontro que une prática de yoga, vinho e arte ao vivo. Enquanto
+                você se movimenta, artistas registram o momento em desenho.
+              </p>
+              <div class="card-tags">
+                <span>Peças únicas do seu corpo em movimento</span>
+                <span>Experiência sensorial</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-badge">Celebrações • Chá de bebê artístico</div>
+              <h3 class="card-title">Pintura em bodies & memórias de família</h3>
+              <p class="card-body">
+                Um jeito diferente de celebrar: cada pessoa pinta um body de bebê,
+                criando uma coleção de memórias afetivas para a chegada da criança.
+              </p>
+              <div class="card-tags">
+                <span class="tag-accent">Família e amigos</span>
+                <span>Presente coletivo</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-badge">Empresas • Projetos sob medida</div>
+              <h3 class="card-title">Arte como experiência para times</h3>
+              <p class="card-body">
+                Vivências especiais para empresas, encontros de equipe e eventos
+                internos que querem celebrar conquistas com arte, cuidado e presença.
+              </p>
+              <div class="card-tags">
+                <span>Onboarding criativo</span>
+                <span>Confraternizações</span>
+                <span>Eventos Sesc, hotéis, resorts</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- AGENDA -->
+        <section id="agenda">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Agenda</div>
+            </div>
+            <p class="section-sub">
+              Alguns encontros abrem turma, outros são fechados para grupos.  
+              Fala com a gente pra saber as próximas datas ou criar o seu.
+            </p>
+          </div>
+
+          <div class="event-list">
+            <div class="event">
+              <div class="event-main">
+                <div class="event-title">Cerâmica com vinho – turma aberta</div>
+                <div class="event-meta">
+                  Data a definir • Tadow Box • Cuiabá - MT
+                </div>
+              </div>
+              <div class="event-pill">Em breve</div>
+            </div>
+
+            <div class="event">
+              <div class="event-main">
+                <div class="event-title">Yoga Tadow – edição próxima</div>
+                <div class="event-meta">
+                  Vivência com yoga, arte ao vivo e vinho.
+                </div>
+              </div>
+              <div class="event-pill">Lista de interesse</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="galeria">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Galeria</div>
+            </div>
+            <p class="section-sub">
+              Pequenos recortes do que já aconteceu aqui dentro.  
+              Depois você pode trocar essas imagens por fotos reais da Tadow.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <span>Cerâmica em processo</span>
+            </div>
+            <div class="gallery-item">
+              <span>Vivência com taças</span>
+            </div>
+            <div class="gallery-item">
+              <span>Detalhes do ateliê</span>
+            </div>
+            <div class="gallery-item">
+              <span>Peças prontas</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTATO / VISITE -->
+        <section id="visite">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Visite</div>
+            </div>
+            <p class="section-sub">
+              A Tadow Box fica em Cuiabá - MT.  
+              As visitas são combinadas com antecedência, assim a gente garante
+              tempo, espaço e cuidado pra te receber.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-label">Endereço</div>
+              <div class="contact-main">
+                Rua Itajubá, 05 - CPA 1<br />
+                Cuiabá - MT
+              </div>
+              <div class="contact-links">
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver no mapa ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-label">Contato</div>
+              <div class="contact-main">
+                Fala com a gente pra agendar vivência, orçamento de turma ou
+                projeto especial.
+              </div>
+              <div class="contact-links">
+                <a
+                  href="https://wa.me/5599999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href="https://www.instagram.com/tadowbox"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Tadow Box Ateliê Artístico.</div>
+        <div class="footer-links">
+          <a href="#experiencias">Ver experiências</a>
+          <a href="https://www.instagram.com/tadowbox" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // atualiza ano automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
