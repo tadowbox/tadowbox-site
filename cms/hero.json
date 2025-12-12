@@ -1,0 +1,18 @@
+{
+  "kicker": "Ateliê · Galeria · Vivências",
+  "title": "A arte acontece no encontro.",
+  "subtitle": "A Tadow Box é um ateliê-galeria em Cuiabá que cria experiências em cerâmica, pintura, movimento e presença.",
+  "tags": ["cerâmica", "pintura", "yoga tadow", "celebrações"],
+  "buttons": [
+    {
+      "label": "Reservar vivência",
+      "href": "https://wa.me/5565981693839?text=Acessei%20o%20site%20da%20tadow%20e%20quero%20mais%20informa%C3%A7%C3%B5es.",
+      "primary": true
+    },
+    {
+      "label": "Ver experiências",
+      "href": "#experiencias",
+      "primary": false
+    }
+  ]
+}
