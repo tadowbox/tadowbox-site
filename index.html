@@ -948,32 +948,36 @@
         const card = document.createElement("article");
         card.className = "experience-card";
 
-        card.innerHTML = `
-<div class="experience-photo" style="background-image:url('${exp.imagem || "./img/tadow.jpg"}');"></div>
-          <div class="experience-body">
-            <div class="experience-badge">${exp.badge}</div>
-            <h3 class="experience-title">${exp.title}</h3>
-            <div class="experience-tags">
-              ${exp.tags
-                .slice(0, 3)
-                .map(tag => `<span>${tag}</span>`)
-                .join("")}
-            </div>
-          </div>
+        const bgStyle = exp.imagem
+  ? `style="background-image:url('${exp.imagem}');"`
+  : "";
 
-          <div class="experience-footer">
-            <button class="experience-toggle">Ver mais +</button>
-            <div class="experience-extra" hidden>
-              ${exp.desc}
-              <div class="experience-actions" style="margin-top:8px;">
-              <a href="./experiencias.html#${exp.slug}" class="experience-link">
-  Saber mais
-</a>
+card.innerHTML = `
+  <div class="experience-photo" ${bgStyle}></div>
+  <div class="experience-body">
+    <div class="experience-badge">${exp.badge}</div>
+    <h3 class="experience-title">${exp.title}</h3>
+    <div class="experience-tags">
+      ${exp.tags
+        .slice(0, 3)
+        .map(tag => `<span>${tag}</span>`)
+        .join("")}
+    </div>
+  </div>
 
-              </div>
-            </div>
-          </div>
-        `;
+  <div class="experience-footer">
+    <button class="experience-toggle">Ver mais +</button>
+    <div class="experience-extra" hidden>
+      ${exp.desc}
+      <div class="experience-actions">
+        <a href="./experiencias.html#${exp.slug}" class="experience-link">
+          Saber mais
+        </a>
+      </div>
+    </div>
+  </div>
+`;
+
 
         container.appendChild(card);
 
