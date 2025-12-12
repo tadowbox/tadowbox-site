@@ -1,15 +1,26 @@
 {
-  "ceramica": [
+  "sub": "Alguns formatos que já vivem na Tadow e podem ser adaptados para você, seu grupo, sua família ou sua empresa.",
+  "itens": [
     {
+      "slug": "ceramica-com-vinho",
       "badge": "Vivência · Cerâmica com vinho",
-      "titulo": "Cerâmica com vinho",
+      "title": "Cerâmica com vinho",
       "tags": ["Amigos", "Despedidas", "Presentes afetivos"],
-      "descricao": "3 horas para criar sua peça com orientação.",
-      "foto": ""
+      "desc": "3 horas de experiência para criar sua própria peça em cerâmica do zero, com orientação das ceramistas e vinho na mesa. Um encontro leve, pra conversar, rir e colocar a mão na massa."
+    },
+    {
+      "slug": "yoga-tadow",
+      "badge": "Experiência · Yoga Tadow",
+      "title": "Yoga Tadow com arte",
+      "tags": ["Vivência sensorial", "Desenhos ao vivo"],
+      "desc": "Encontro que une prática de yoga, arte ao vivo e, às vezes, uma taça. Enquanto você se movimenta, artistas registram as posturas em desenho, criando obras únicas daquele momento."
+    },
+    {
+      "slug": "cha-de-bebe-artistico",
+      "badge": "Celebrações · Chá de bebê artístico",
+      "title": "Chá de bebê artístico",
+      "tags": ["Família e amigos", "Presentes afetivos"],
+      "desc": "Cada pessoa pinta um body de bebê e, no fim, a família leva uma coleção de peças cheias de histórias. Um jeito diferente de celebrar a chegada de uma nova vida."
     }
-  ],
-  "yoga": [],
-  "pintura": [],
-  "celebracoes": [],
-  "empresas": []
+  ]
 }
