@@ -7,7 +7,7 @@
       "title": "Cerâmica com vinho",
       "tags": ["Amigos", "Despedidas", "Presentes afetivos"],
       "desc": "3 horas de experiência para criar sua própria peça em cerâmica do zero, com orientação das ceramistas e vinho na mesa.",
-      "imagem": "./img/exp-ceramica.jpg"
+      "imagem": "./exp-ceramica.jpg"
     },
     {
       "slug": "yoga-tadow",
@@ -15,7 +15,7 @@
       "title": "Yoga Tadow com arte",
       "tags": ["Vivência sensorial", "Desenhos ao vivo"],
       "desc": "Encontro que une yoga, arte ao vivo e, às vezes, uma taça...",
-      "imagem": "./img/exp-yoga.jpg"
+      "imagem": "./exp-yoga.jpg"
     },
     {
       "slug": "cha-de-bebe-artistico",
@@ -23,7 +23,7 @@
       "title": "Chá de bebê artístico",
       "tags": ["Família e amigos", "Presentes afetivos"],
       "desc": "Cada pessoa pinta um body de bebê...",
-      "imagem": "./img/exp-chadebebe.JPG"
+      "imagem": "./exp-chadebebe.JPG"
     }
   ]
 }
