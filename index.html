@@ -348,6 +348,12 @@
       transform: translateY(6px);
       transition: opacity var(--transition), transform var(--transition);
     }
+    .experience-footer {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
     .experience-card.loaded {
       opacity: 1;
@@ -404,24 +410,29 @@
     /* ---------- AGENDA ---------- */
 
     #agenda-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      margin-top: 10px;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 230px);
+  justify-content: start;
+  gap: 16px;
+  margin-top: 10px;
+}
 
-    .event-card {
-      border: 1px solid var(--border-strong);
-      background: var(--bg-alt);
-      padding: 14px 14px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity var(--transition), transform var(--transition);
-    }
+  .event-card {
+  width: 230px; /* impede de esticar */
+  border: 1px solid var(--border-strong);
+  background: var(--bg-alt);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
 
     .event-card.loaded {
       opacity: 1;
