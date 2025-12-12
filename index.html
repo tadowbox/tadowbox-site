@@ -226,7 +226,7 @@
   max-width: 380px;
   aspect-ratio: 3 / 4;
   border: 1px solid var(--border-strong);
-  background-image: url(".hero.jpg");
+  background-image: url("/img/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -961,8 +961,8 @@ async function loadExperiencias() {
     card.className = "experience-card";
 
 const imageSrc = exp.imagem
-  ? `./img/${exp.imagem}`
-  : "./img/hero.jpg";
+  ? `/img/${exp.imagem}`
+  : "/img/hero.jpg";
 
 card.innerHTML = `
   <div class="experience-photo">
