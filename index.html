@@ -421,13 +421,20 @@
   .experience-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
   background:
     linear-gradient(135deg, #f3eee5, #ffffff 40%, #e7ded1 100%);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid var(--border-soft);
+  position: relative;
 }
+
+.experience-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
     }
 
@@ -937,58 +944,62 @@
     /* ---------------------------------------------------------
       EXPERIÊNCIAS
     --------------------------------------------------------- */
-    async function loadExperiencias() {
-      const data = await fetchJSON("./cms/experiencias.json");
-      if (!data) return;
+async function loadExperiencias() {
+  const data = await fetchJSON("./cms/experiencias.json");
+  if (!data) return;
 
-      document.getElementById("experiencias-sub").textContent = data.sub;
+  const sub = document.getElementById("experiencias-sub");
+  if (sub) sub.textContent = data.sub || "";
 
-      const container = document.getElementById("experiencias-row");
-      container.innerHTML = "";
+  const container = document.getElementById("experiencias-row");
+  if (!container) return;
 
-      data.itens.forEach((exp, index) => {
-        const card = document.createElement("article");
-        card.className = "experience-card";
+  container.innerHTML = "";
 
-        const bgStyle = exp.imagem
-  ? `style="background-image:url('${exp.imagem}');"`
-  : "";
+  data.itens.forEach((exp, index) => {
+    const card = document.createElement("article");
+    card.className = "experience-card";
 
-card.innerHTML = `
-  <div class="experience-photo" ${bgStyle}></div>
-  <div class="experience-body">
-    <div class="experience-badge">${exp.badge}</div>
-    <h3 class="experience-title">${exp.title}</h3>
-    <div class="experience-tags">
-      ${exp.tags
-        .slice(0, 3)
-        .map(tag => `<span>${tag}</span>`)
-        .join("")}
-    </div>
-  </div>
+    const imageSrc = exp.imagem || "./img/hero.jpg";
 
-  <div class="experience-footer">
-    <button class="experience-toggle">Ver mais +</button>
-    <div class="experience-extra" hidden>
-      ${exp.desc}
-      <div class="experience-actions">
-        <a href="./experiencias.html#${exp.slug}" class="experience-link">
-          Saber mais
-        </a>
+    card.innerHTML = `
+      <div class="experience-photo">
+        <img src="${imageSrc}" alt="${exp.title || ""}" loading="lazy" />
       </div>
-    </div>
-  </div>
-`;
 
+      <div class="experience-body">
+        <div class="experience-badge">${exp.badge || ""}</div>
+        <h3 class="experience-title">${exp.title || ""}</h3>
+        <div class="experience-tags">
+          ${(exp.tags || [])
+            .slice(0, 3)
+            .map(tag => `<span>${tag}</span>`)
+            .join("")}
+        </div>
+      </div>
 
-        container.appendChild(card);
+      <div class="experience-footer">
+        <button class="experience-toggle">Ver mais +</button>
+        <div class="experience-extra" hidden>
+          ${exp.desc || ""}
+          <div class="experience-actions">
+            <a href="./experiencias.html#${exp.slug}" class="experience-link">
+              Saber mais
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
 
-        // animação suave por ordem
-        setTimeout(() => card.classList.add("loaded"), 70 * index);
-      });
+    container.appendChild(card);
 
-      setupExperienceToggle();
-    }
+    // animação suave por ordem
+    setTimeout(() => card.classList.add("loaded"), 70 * index);
+  });
+
+  setupExperienceToggle();
+}
+
 
     function setupExperienceToggle() {
       const buttons = document.querySelectorAll(".experience-toggle");
