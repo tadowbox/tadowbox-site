@@ -1,4 +1,9 @@
-[
-  { "titulo": "Cerâmica em processo" },
-  { "titulo": "Vivência com taças" }
-]
+{
+  "sub": "Alguns recortes visuais do que já aconteceu aqui dentro. Em breve você pode trocar esses blocos por fotos reais da Tadow.",
+  "itens": [
+    { "titulo": "Cerâmica em processo" },
+    { "titulo": "Vivência com taças" },
+    { "titulo": "Detalhes do ateliê" },
+    { "titulo": "Peças prontas" }
+  ]
+}
