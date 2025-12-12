@@ -417,8 +417,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-  .experience-photo {
+.experience-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-bottom: 1px solid var(--border-soft);
@@ -765,20 +764,111 @@
         </section>
 
         <!-- EXPERIÊNCIAS (dinâmicas via JSON) -->
-        <section id="experiencias">
-          <div class="section-header">
-            <div class="section-title-row">
-              <div class="section-kicker">Formatos</div>
-              <h2 class="section-title">Experiências</h2>
-              <div class="section-accent-bar"></div>
-            </div>
-            <p class="section-sub" id="experiencias-sub"></p>
-          </div>
+      <section id="experiencias">
+  <div class="section-header">
+    <div class="section-title-row">
+      <div class="section-kicker">Formatos</div>
+      <h2 class="section-title">Experiências</h2>
+      <div class="section-accent-bar"></div>
+    </div>
+    <p class="section-sub" id="experiencias-sub">
+      Alguns formatos que já vivem na Tadow e podem ser adaptados para você,
+      seu grupo, sua família ou sua empresa.
+    </p>
+  </div>
 
-          <div id="experiencias-container">
-            <div id="experiencias-row"></div>
+  <div class="experiences-strip">
+    <div class="experiences-row" id="experiencias-row">
+      
+      <!-- Card 1 -->
+      <article class="experience-card">
+        <div class="experience-photo">
+          <img src="/img/exp-ceramica.jpg" alt="Cerâmica com vinho" loading="lazy" />
+        </div>
+        <div class="experience-body">
+          <div class="experience-badge">Vivência · Cerâmica com vinho</div>
+          <h3 class="experience-title">Cerâmica com vinho</h3>
+          <div class="experience-tags">
+            <span class="tag-accent">Amigos</span>
+            <span>Despedidas</span>
+            <span>Presentes afetivos</span>
           </div>
-        </section>
+        </div>
+        <div class="experience-footer">
+          <button class="experience-toggle" type="button">Ver mais +</button>
+          <div class="experience-extra" hidden>
+            3 horas de experiência para criar sua própria peça em cerâmica do
+            zero, com orientação das ceramistas e vinho na mesa. Um encontro
+            leve, pra conversar, rir e colocar a mão na massa.
+            <div class="experience-actions">
+              <a href="./experiencias.html#ceramica-com-vinho" class="experience-link">
+                Saber mais
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="experience-card">
+        <div class="experience-photo">
+          <img src="/img/exp-yoga.jpg" alt="Yoga Tadow com arte" loading="lazy" />
+        </div>
+        <div class="experience-body">
+          <div class="experience-badge">Experiência · Yoga Tadow</div>
+          <h3 class="experience-title">Yoga Tadow com arte</h3>
+          <div class="experience-tags">
+            <span>Vivência sensorial</span>
+            <span>Desenhos ao vivo</span>
+          </div>
+        </div>
+        <div class="experience-footer">
+          <button class="experience-toggle" type="button">Ver mais +</button>
+          <div class="experience-extra" hidden>
+            Encontro que une prática de yoga, arte ao vivo e, às vezes, uma
+            taça. Enquanto você se movimenta, artistas registram as posturas em
+            desenho, criando obras únicas daquele momento.
+            <div class="experience-actions">
+              <a href="./experiencias.html#yoga-tadow" class="experience-link">
+                Saber mais
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="experience-card">
+        <div class="experience-photo">
+          <img src="/img/exp-chadebebe.JPG" alt="Chá de bebê artístico" loading="lazy" />
+        </div>
+        <div class="experience-body">
+          <div class="experience-badge">Celebrações · Chá de bebê artístico</div>
+          <h3 class="experience-title">Chá de bebê artístico</h3>
+          <div class="experience-tags">
+            <span class="tag-accent">Família e amigos</span>
+            <span>Presentes afetivos</span>
+          </div>
+        </div>
+        <div class="experience-footer">
+          <button class="experience-toggle" type="button">Ver mais +</button>
+          <div class="experience-extra" hidden>
+            Cada pessoa pinta um body de bebê e, no fim, a família leva uma
+            coleção de peças cheias de histórias. Um jeito diferente de celebrar
+            a chegada de uma nova vida.
+            <div class="experience-actions">
+              <a href="./experiencias.html#cha-de-bebe-artistico" class="experience-link">
+                Saber mais
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
         <!-- AGENDA (dinâmica) -->
         <section id="agenda">
