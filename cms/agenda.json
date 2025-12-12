@@ -1,8 +1,21 @@
-[
-  {
-    "data": "12 JAN · 19H",
-    "titulo": "Cerâmica com vinho",
-    "sub": "Turma aberta · Tadow Box",
-    "status": "Vagas disponíveis"
-  }
-]
+{
+  "sub": "A programação da Tadow abre turmas de tempos em tempos e também recebe grupos fechados. Fala com a gente para saber as próximas datas.",
+  "itens": [
+    {
+      "data": "12 JAN · 19H",
+      "titulo": "Cerâmica com vinho",
+      "sub": "Turma aberta · Tadow Box",
+      "status": "Vagas disponíveis",
+      "mes": "Janeiro",
+      "tipo": "Cerâmica"
+    },
+    {
+      "data": "20 JAN · 08H",
+      "titulo": "Yoga Tadow com arte",
+      "sub": "Vivência sensorial · Ateliê",
+      "status": "Lista de interesse",
+      "mes": "Janeiro",
+      "tipo": "Yoga"
+    }
+  ]
+}
