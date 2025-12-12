@@ -945,7 +945,7 @@
         card.className = "experience-card";
 
         card.innerHTML = `
-          <div class="experience-photo"></div>
+<div class="experience-photo" style="background-image:url('${exp.imagem || "./img/tadow.jpg"}');"></div>
           <div class="experience-body">
             <div class="experience-badge">${exp.badge}</div>
             <h3 class="experience-title">${exp.title}</h3>
