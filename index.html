@@ -384,6 +384,27 @@
   border-color: var(--border-strong);
   transform: translateY(-1px);
 }
+.experience-link {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.experience-link:hover {
+  background: #ff7a1f; /* variação mais quente */
+  transform: translateY(-1px);
+}
 
 
 
@@ -927,11 +948,10 @@
             <div class="experience-extra" hidden>
               ${exp.desc}
               <div class="experience-actions" style="margin-top:8px;">
-                <a href="./experiencias.html#${exp.slug}" 
-                   class="experience-link"
-                   style="background: var(--accent); color:#000; border-color: var(--accent);">
-                  Saber mais
-                </a>
+              <a href="./experiencias.html#${exp.slug}" class="experience-link">
+  Saber mais
+</a>
+
               </div>
             </div>
           </div>
