@@ -960,36 +960,17 @@ async function loadExperiencias() {
     const card = document.createElement("article");
     card.className = "experience-card";
 
-    const imageSrc = exp.imagem || "./img/hero.jpg";
+const imageSrc = exp.imagem
+  ? `./img/${exp.imagem}`
+  : "./img/hero.jpg";
 
-    card.innerHTML = `
-      <div class="experience-photo">
-        <img src="${imageSrc}" alt="${exp.title || ""}" loading="lazy" />
-      </div>
+card.innerHTML = `
+  <div class="experience-photo">
+    <img src="${imageSrc}" alt="${exp.title || ""}" loading="lazy" />
+  </div>
+  ...
+`;
 
-      <div class="experience-body">
-        <div class="experience-badge">${exp.badge || ""}</div>
-        <h3 class="experience-title">${exp.title || ""}</h3>
-        <div class="experience-tags">
-          ${(exp.tags || [])
-            .slice(0, 3)
-            .map(tag => `<span>${tag}</span>`)
-            .join("")}
-        </div>
-      </div>
-
-      <div class="experience-footer">
-        <button class="experience-toggle">Ver mais +</button>
-        <div class="experience-extra" hidden>
-          ${exp.desc || ""}
-          <div class="experience-actions">
-            <a href="./experiencias.html#${exp.slug}" class="experience-link">
-              Saber mais
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
 
     container.appendChild(card);
 
