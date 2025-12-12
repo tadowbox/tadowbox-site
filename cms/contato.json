@@ -1,8 +1,8 @@
 {
+  "sub": "A Tadow Box fica em Cuiabá - MT. As visitas são combinadas com antecedência para garantir que o espaço esteja pronto pra te receber com calma.",
   "endereco": "Rua Itajubá, 05 - CPA 1, Cuiabá - MT",
-  "texto": "Agende vivência, orçamento de turma ou projeto especial.",
-  "links": [
-    { "label": "WhatsApp", "url": "https://wa.me/5565981693839" },
-    { "label": "Instagram", "url": "https://instagram.com/tadowbox" }
-  ]
+  "texto": "Fala com a gente pra agendar vivência, orçamento de turma ou projeto especial.",
+  "mapaUrl": "https://maps.app.goo.gl/fRhHm7MZafBWTcAK6",
+  "whatsUrl": "https://wa.me/5565981693839?text=Acessei%20o%20site%20da%20tadow%20e%20quero%20mais%20informa%C3%A7%C3%B5es.",
+  "instaUrl": "https://instagram.com/tadowbox"
 }
