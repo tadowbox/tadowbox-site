@@ -17,5 +17,62 @@
       "mes": "Janeiro",
       "tipo": "Yoga"
     }
+    {
+  data: "22 JAN · 19H",
+  titulo: "Pintura em cerâmica",
+  sub: "Vivência criativa · Ateliê",
+  status: "Vagas disponíveis",
+  tipo: "ceramica"
+},
+{
+  data: "24 JAN · 18H",
+  titulo: "Aquarela botânica",
+  sub: "Turma aberta · Tadow Box",
+  status: "Últimas vagas",
+  tipo: "pintura"
+},
+{
+  data: "26 JAN · 09H",
+  titulo: "Yoga Tadow",
+  sub: "Vivência sensorial · Ateliê",
+  status: "Lista de interesse",
+  tipo: "yoga"
+},
+{
+  data: "28 JAN · 19H",
+  titulo: "Cerâmica avançada",
+  sub: "Grupo fechado · Tadow Box",
+  status: "Esgotado",
+  tipo: "ceramica"
+},
+{
+  data: "30 JAN · 18H",
+  titulo: "Desenho ao vivo",
+  sub: "Experiência artística · Galeria",
+  status: "Vagas disponíveis",
+  tipo: "desenho"
+},
+{
+  data: "01 FEV · 10H",
+  titulo: "Chá de bebê artístico",
+  sub: "Celebração · Ateliê",
+  status: "Sob consulta",
+  tipo: "celebracao"
+},
+{
+  data: "03 FEV · 19H",
+  titulo: "Modelagem livre",
+  sub: "Turma aberta · Tadow Box",
+  status: "Vagas disponíveis",
+  tipo: "ceramica"
+},
+{
+  data: "05 FEV · 18H",
+  titulo: "Pintura em taças",
+  sub: "Vivência criativa · Ateliê",
+  status: "Últimas vagas",
+  tipo: "pintura"
+},
+
   ]
 }
