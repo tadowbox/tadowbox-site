@@ -500,17 +500,21 @@
 
     /* ---------- AGENDA ---------- */
 
+/* ---------- AGENDA ---------- */
 #agenda-grid{
   display: grid !important;
-  grid-template-columns: repeat(5, 230px) !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 230px)) !important;
   gap: 16px !important;
-  align-items: start !important;
   justify-content: start !important;
+  align-items: start !important;
   margin-top: 10px;
 }
 
-/* garante que filtros + grid + paginação ocupem a largura toda,
-   mesmo que o #agenda esteja em layout de 2 colunas */
+/* garante que os cards não forcem 1 por linha */
+.event-card{
+  width: 100% !important;
+}
+
 #agenda > div[style],
 #agenda-pagination{
   grid-column: 1 / -1;
@@ -715,10 +719,6 @@
       .nav-links {
         display: none;
       }
-        #agenda-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: stretch;
-  }
 
   .event-card {
     width: 100%;
