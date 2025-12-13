@@ -507,15 +507,23 @@
   align-items: start !important;
   margin-top: 10px;
 }
-    
+
+/* garante que filtros + paginação ocupem a largura toda */
 #agenda > div[style],
 #agenda-pagination{
   grid-column: 1 / -1;
 }
 
+/* FORÇA cada card a ocupar apenas UMA coluna */
+#agenda-grid .event-card{
+  grid-column: auto !important;
+  width: 230px !important;
+  max-width: 230px !important;
+  justify-self: start;
+}
 
-  .event-card {
-  width: 230px; /* impede de esticar */
+/* ---------- EVENT CARD ---------- */
+.event-card {
   border: 1px solid var(--border-strong);
   background: var(--bg-alt);
   padding: 14px;
@@ -530,45 +538,45 @@
   transition: opacity var(--transition), transform var(--transition);
 }
 
+.event-card.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .event-card.loaded {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.event-date {
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  padding: 4px 8px;
+  margin: -14px -14px 8px -14px;
+}
 
-    .event-date {
-      background: var(--accent);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      padding: 4px 8px;
-      margin: -14px -14px 8px -14px;
-    }
+.event-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
 
-    .event-title {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
+.event-meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
 
-    .event-meta {
-      font-size: 12px;
-      color: var(--ink-soft);
-    }
+.event-cta {
+  margin-top: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  border: 1px solid var(--border-strong);
+  padding: 4px 8px;
+  display: inline-block;
+  background: var(--accent-soft);
+  width: fit-content;
+}
 
-    .event-cta {
-      margin-top: 4px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      border: 1px solid var(--border-strong);
-      padding: 4px 8px;
-      display: inline-block;
-      background: var(--accent-soft);
-      width: fit-content;
-    }
 
     /* ---------- GALERIA ---------- */
 
