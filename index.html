@@ -332,20 +332,24 @@ html, body {
   overflow-x: hidden;
 }
 
-#experiencias-container {
+#experiencias-container,
+.experiences-strip {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
   max-width: 100%;
+  width: 100%;
 }
 
+.experiences-row,
 #experiencias-row {
   display: inline-flex;
   gap: 16px;
   padding-right: 8px;
   align-items: flex-start;
   white-space: nowrap;
+  width: max-content;
 }
 
 /* cada card não encolhe, então só o container rola */
