@@ -13,6 +13,11 @@
       "label": "Ver experiências",
       "href": "#experiencias",
       "primary": false
+    },
+    {
+      "label": "Próximos eventos",
+      "href": "#agenda",
+      "primary": false
     }
   ]
 }
