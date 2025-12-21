@@ -2,60 +2,28 @@
   "sub": "A programação da Tadow abre turmas de tempos em tempos e também recebe grupos fechados. Fala com a gente para saber as próximas datas.",
   "itens": [
     {
-      "data": "12 JAN · 19H",
+      "data": "EM BREVE",
       "titulo": "Cerâmica com vinho",
-      "sub": "Turma aberta · Tadow Box",
-      "status": "Vagas disponíveis",
+      "sub": "Tadow Box",
+      "status": "Vagas Fechadas",
       "mes": "Janeiro",
       "tipo": "Cerâmica"
     },
     {
-      "data": "20 JAN · 08H",
+      "data": "EM BREVE",
       "titulo": "Yoga Tadow com arte",
       "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
+      "status": "Vagas Fechadas",
       "mes": "Janeiro",
       "tipo": "Yoga"
     },
     {
-      "data": "20 JAN · 08H",
-      "titulo": "Yoga Tadow com arte",
-      "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
+      "data": "EM BREVE",
+      "titulo": "Tadow Sessions",
+      "sub": "Festa · Amigos",
+      "status": "Vagas Fechadas",
       "mes": "Janeiro",
       "tipo": "Yoga"
-    },
-    {
-      "data": "8 FEV · 08H",
-      "titulo": "Yoga Tadow com arte",
-      "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
-      "mes": "Fevereiro",
-      "tipo": "Cerâmica"
-    },
-    {
-      "data": "10 FEV · 08H",
-      "titulo": "Yoga Tadow com arte",
-      "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
-      "mes": "Fevereiro",
-      "tipo": "Tadow Sessions"
-    },
-    {
-      "data": "6 ABRIL · 08H",
-      "titulo": "Yoga Tadow com arte",
-      "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
-      "mes": "Abril",
-      "tipo": "Yoga"
-    },
-    {
-      "data": "12 JUNHO · 08H",
-      "titulo": "Yoga Tadow com arte",
-      "sub": "Vivência sensorial · Ateliê",
-      "status": "Lista de interesse",
-      "mes": "Junho",
-      "tipo": "Tadow Sessions"
     }
        ]
 }
