@@ -541,6 +541,19 @@ html, body {
   max-width: 230px !important;
   justify-self: start;
 }
+    
+@media (max-width: 640px) {
+  #agenda-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: center !important;
+  }
+
+  #agenda-grid .event-card{
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch;
+  }
+}
 
 /* ---------- EVENT CARD ---------- */
 .event-card {
