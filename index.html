@@ -503,6 +503,27 @@ html, body {
   background: #ff7a1f;
   transform: translateY(-1px);
 }
+    /* força o carrossel a rolar horizontalmente */
+#experiencias-container{
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#experiencias-row{
+  display: flex !important;
+  width: max-content !important;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.experience-card{
+  flex: 0 0 auto !important;
+}
+
 
 /* ---------- AGENDA ---------- */
 #agenda-grid{
