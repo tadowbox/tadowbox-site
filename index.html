@@ -332,40 +332,25 @@ html, body {
   overflow-x: hidden;
 }
 
-#experiencias-container {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+    /* força o carrossel a rolar horizontalmente */
+#experiencias-container{
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
 }
 
-#experiencias-row {
-  display: flex;
-  width: max-content;   /* <- força o row ficar “maior” que o container quando tiver muitos cards */
+#experiencias-row{
+  display: flex !important;
+  width: max-content !important;
   gap: 16px;
-  padding-right: 8px;
   align-items: flex-start;
 }
 
-/* cada card não encolhe, então só o container rola */
-.experience-card {
-  flex: 0 0 auto;
-  border-radius: 10px;
-  border: 1px solid var(--border-soft);
-  background: var(--bg-alt);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-  min-width: 280px;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  padding: 12px 14px 14px;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity var(--transition), transform var(--transition);
+.experience-card{
+  flex: 0 0 auto !important;
 }
 
 .experience-card.loaded {
@@ -502,26 +487,6 @@ html, body {
 .experience-link:hover {
   background: #ff7a1f;
   transform: translateY(-1px);
-}
-    /* força o carrossel a rolar horizontalmente */
-#experiencias-container{
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-  -webkit-overflow-scrolling: touch;
-}
-
-#experiencias-row{
-  display: flex !important;
-  width: max-content !important;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.experience-card{
-  flex: 0 0 auto !important;
 }
 
 
