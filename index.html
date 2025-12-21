@@ -333,19 +333,21 @@ html, body {
 }
 
 #experiencias-container {
+  display: block;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
-  max-width: 100%;
 }
 
 #experiencias-row {
-  display: inline-flex;
+  display: flex;
+  width: max-content;   /* <- força o row ficar “maior” que o container quando tiver muitos cards */
   gap: 16px;
   padding-right: 8px;
   align-items: flex-start;
-  white-space: nowrap;
 }
 
 /* cada card não encolhe, então só o container rola */
